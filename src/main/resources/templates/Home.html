@@ -8,6 +8,17 @@
 
 <h2>Strona Główna</h2>
 <p th:text="${zmienna}">Test</p>
+<!--dodajemy liste z controlera haome-->
+<ul>
+<!--li ma być kilka razy czyli th each używamy-->
 
+<!--    <li th:each="element: ${lista}" th:text="${element}">asd</li>-->
+<!--// wyświetlamy tyle razy ile elementów jest w liście,  i potem dodajemy text który odnosi się do elementu z each i wyświetli się między atrybutami li zmaiast asd-->
+
+    <li th:each="element: ${lista}">
+        <a th:text="${element}" th:href="@{|/strona/${element}|}">asd</a>
+    </li>
+<!--każdy lement z listy będzie miał link do strony z swoją nazwą i dzięki @ zostanie dodana cała ścieżke którą zadeklarowliśmy w application.properties-->
+</ul>
 </body>
 </html>
